@@ -1,0 +1,355 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: Roboto, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+  --yellow: rgba(255, 222, 47, 1);
+  --darkYellow: #fecc30;
+  --black: rgba(26, 30, 34, 1);
+  --blue: #3871c1;
+  --gray: #dadada;
+  --red: rgb(255, 51, 51);
+  --white: #fff;
+  --lightBlue: #359CD6;
+  --gray500: #A5A5A5;
+}
+* {
+  box-sizing: border-box;
+}
+
+.carousel__prev,
+.carousel__next {
+  margin-left: 93% !important;
+  transform: translateY(-210px) !important;
+  color: #A5A5A5 !important;
+  font-size: 50px !important;
+}
+
+.carousel__prev:hover,
+.carousel__next:hover {
+  color: var(--lightBlue) !important;
+}
+
+.carousel__icon {
+  font-size: 20px !important;
+}
+
+main {
+  overflow: hidden;
+  min-height: max-content;
+}
+img {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  object-fit: cover;
+}
+select {
+  cursor: pointer;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  display: flex;
+  font-size: 8px;
+  width: 72px;
+  height: 24px;
+  padding: 4px 12px;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  border-radius: 40px;
+  border: 1px solid #dadada;
+  background-color: transparent;
+}
+select::-ms-expand {
+  display: none;
+}
+.overlay::after {
+  position: absolute;
+  content: '';
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, rgba(57, 57, 57, 0) 0%, #3d3d3d 100%);
+  z-index: -1;
+}
+.down-arrow-ic {
+  position: absolute;
+  top: 0.8rem;
+  right: 1rem;
+  width: 8px;
+  height: 8px;
+  z-index: -10;
+}
+table {
+  width: 100%;
+}
+tr {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+}
+tr > th:first-child,
+td:first-child {
+  width: 50%;
+}
+tr > th,
+td {
+  width: 25%;
+  padding: 10px 0;
+}
+th {
+  border-bottom: 1px solid var(--gray);
+}
+td {
+  border-top: 1px solid var(--gray);
+  border-bottom: 1px solid var(--gray);
+}
+td:nth-child(2),
+td:nth-child(3) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+th:nth-child(2) {
+  border-left: 1px solid var(--gray);
+  border-right: 1px solid var(--gray);
+}
+td:nth-child(2) {
+  border: 1px solid var(--gray);
+}
+a.vue-active-class {
+  color: var(--white);
+  background-color: var(--lightBlue);
+}
+
+.active-event-class {
+  color: var(--yellow);
+}
+
+.active-nav-class {
+  display: flex;
+  align-items: center;
+  height: 100px;
+  margin-top: -26px;
+  padding: 20px;
+  background-color: var(--lightBlue);
+  color: var(--white);
+}
+
+.Page.Page-active {
+  color: rgba(255, 222, 47, 1) !important;
+}
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.2s linear;
+}
+
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
+}
+.slide-translate-enter-active,
+.slide-translate-leave-active {
+  transition: all 0.3s ease-out;
+}
+
+.slide-translate-enter-from {
+  opacity: 0;
+  transform: translateX(20%);
+}
+
+.slide-translate-leave-to {
+  opacity: 0;
+  transform: translateX(-20%);
+}
+.modal-enter-active,
+.modal-leave-active {
+  transition: all 0.3s ease-out;
+}
+.modal-enter-from {
+  opacity: 0;
+  transform: translateY(-20%);
+}
+
+.modal-leave-to {
+  opacity: 0;
+  transform: translateY(-20%);
+}
+.dropdown-list {
+  cursor: pointer;
+  position: fixed;
+  display: flex;
+  justify-content: space-between;
+  top: 160px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  animation: enter 0.3s linear;
+  z-index: 20;
+}
+.dropdown-content {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--yellow);
+  color: var(--black);
+}
+@keyframes enter {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.event-btn.result {
+  background-color: var(--gray);
+}
+.event-btn.view-detail {
+  background-color: var(--yellow);
+}
+.error-message {
+  color: var(--red);
+}
+.dots {
+  cursor: pointer;
+  border-radius: 50%;
+  background-color: var(--white);
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+}
+/* h2::after {
+  position: absolute;
+  content: '';
+  bottom: -20px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--gray);
+} */
+
+.arrowLeftPartner {
+  fill: var(--gray500);
+}
+
+.arrowRightPartner {
+  fill: var(--lightBlue);
+}
+
+@layer base {
+  h2 {
+    @apply relative text-blue text-lg font-bold text-start uppercase;
+  }
+  h3 {
+    @apply text-2xl font-semibold uppercase;
+  }
+}
+@screen tablet {
+  * {
+    @apply text-base;
+  }
+  h1 {
+    @apply text-6xl text-start font-bold min-h-[137px];
+  }
+  h2 {
+    @apply text-xl;
+  }
+  h3 {
+    @apply text-3xl font-semibold uppercase;
+  }
+  h4 {
+    @apply text-xl font-medium;
+  }
+  h5 {
+    @apply text-sm font-thin;
+  }
+  button {
+    @apply font-medium;
+  }
+}
+.down-arrow-ic {
+  top: 5px;
+  width: 12px;
+  height: 12px;
+  right: 12px;
+}
+select {
+  height: 24px;
+}
+@media only screen and (min-width: 480px) {
+  main {
+    min-height: calc(100vh - 150px);
+  }
+  select {
+    width: 150px;
+    height: 50px;
+    font-size: 1rem;
+    padding: 13px 0 13px 17px;
+  }
+  .down-arrow-ic {
+    top: 0.8rem;
+    width: 18px;
+    height: 18px;
+  }
+  .btn.view-more > button {
+    width: 166px;
+    height: 48px;
+    font-size: 1rem;
+  }
+  tr > th:first-child,
+  td:first-child {
+    width: 60%;
+  }
+  tr > th,
+  td {
+    width: 20%;
+    padding: 25px 12px;
+  }
+}
+
+.btn.btn-view-more {
+  max-width: 180px;
+  min-width: 140px;
+  color: var(--black);
+  font-weight: 700;
+  height: 50px;
+  padding: 12px 20px;
+  border-radius: 30px;
+  background-color: var(--darkYellow);
+}
+
+/* progress */
+
+.progress {
+  width: 34px;
+  height: 4px;
+  margin-right: 10px;
+  background-color: #C4C4C4;
+  border-radius: 10px;
+  transition: ease-in .1s;
+}
+
+.progress-hover {
+  background-color: var(--lightBlue);
+}
+
+.progress:hover {
+  background-color: var(--lightBlue);
+  cursor: pointer;
+  transition: ease-in .1s;
+}
