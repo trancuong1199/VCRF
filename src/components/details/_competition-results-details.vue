@@ -92,7 +92,7 @@ import { formatDate } from '@/plugins/date-utils.js';
 import defaultImg from '@/assets/images/default.png';
 import vcrsfLogo from '@/assets/images/vcrsf_logo.svg';
 import homeLogo from '@/assets/images/contact/home.png';
-import phoneLogo from '@/assets/images/contact/baseline-phone.png';
+import phoneLogo from '@/assets/images/contact/phone2.png';
 import emailLogo from '@/assets/images/contact/email.png';
 import webIc from '@/assets/images/web-ic.svg';
 import getResults from '@/composables/getResults';

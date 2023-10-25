@@ -23,7 +23,8 @@
         </li>
       </ul>
     </section>
-    <div class="my-10">
+    <div class="my-10
+    ">
       <div class="flex justify-between h-[300px] mb-14">
         <img src="@/assets/images/canoeing2.png" />
         <div class="w-[100%]">
